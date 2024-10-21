@@ -23,7 +23,7 @@ Architecture guidelines (from DCGAN paper):
 ## DCGAN Training Progression
 ![impressgan-training-demo-resized](https://github.com/user-attachments/assets/66dcca63-80c8-4991-8913-0c1ce0df320d)
 
-This is an animation that visualises the GAN's training progress over time. It showcases the evolution of the generated images across different epochs, and how the model gradually learns to produce more realistic images resembling the Impressionist artwork dataset.
+This is an animation that visualises the GAN's training progress over time. It showcases the evolution of the generated images across different epochs, and how the model gradually learns to produce more realistic images resembling Impressionist artworks.
 
 ## Example Outputs
 ![dcgan_generated_images](https://github.com/user-attachments/assets/ddbad598-f04f-440b-b299-ec69772b0a76)
