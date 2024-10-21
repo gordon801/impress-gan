@@ -11,7 +11,7 @@ This repository contains two key components:
 ## Architecture
 ![image](https://github.com/user-attachments/assets/0f6d324e-68d0-4c02-b709-0337b6c3c301)
 
-The Deep Convolutional Generative Adversarial Network (DCGAN) consists of a Generator network and a Discriminator network, which are trained adversarially within a convolutional neural network (CNN) framework to generate realistic images. We trained the network with Binary Cross-Entropy loss and assessed the quality of its generated images visually.
+The DCGAN model consists of a Generator network and a Discriminator network, which are trained adversarially within a convolutional neural network (CNN) framework to generate realistic images. We trained the network with Binary Cross-Entropy loss and assessed the quality of its generated images visually.
 
 Architecture guidelines (from DCGAN paper):
 - Replace any pooling layers with strided convolutions (discriminator) and fractional-strided convolutions (generator).
