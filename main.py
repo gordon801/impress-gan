@@ -19,8 +19,7 @@ LEARNING_RATE = 2e-4 # Learning rate for optimisers (sourced from paper)
 BETA1 = 0.5 # Beta1 hyperparameter for Adam optimisers (sourced from paper)
 
 DEVICE = torch.device('cuda' if torch.cuda.is_available() else 'cpu')
-DATA_DIR = 'F:\deep-learning\datasets\impressionist_landscapes'
-# DATA_DIR = 'data/impressionist_landscapes'
+DATA_DIR = 'data/impressionist_landscapes'
 
 # Default values for command-line arguments
 DEFAULT_DATASET = 'full'
