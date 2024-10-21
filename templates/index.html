@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>ImpressGAN</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            text-align: center;
+            margin-top: 50px;
+        }
+        button {
+            padding: 10px 20px;
+            font-size: 16px;
+            cursor: pointer;
+        }
+        img {
+            margin-top: 20px;
+            max-width: 100%;
+            height: auto;
+        }
+    </style>
+</head>
+<body>
+    <h1>ImpressGAN: AI-Generated Impressionist Art</h1>
+    <button onclick="generateImages()">Generate Art</button>
+    <div id="image-container">
+        <!-- The generated image will appear here -->
+    </div>
+
+    <script>
+        function generateImages() {
+            fetch('/generate', { method: 'POST' })
+            .then(response => response.blob())
+            .then(imageBlob => {
+                // Create an object URL for the image and display it
+                const imageObjectURL = URL.createObjectURL(imageBlob);
+                const imageContainer = document.getElementById('image-container');
+                imageContainer.innerHTML = `<img src="${imageObjectURL}" alt="Generated Image">`;
+            })
+            .catch(error => console.error('Error:', error));
+        }
+    </script>
+</body>
+</html>
