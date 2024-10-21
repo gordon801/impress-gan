@@ -23,7 +23,7 @@ Architecture guidelines (from DCGAN paper):
 ## DCGAN Training Progression
 ![impressgan-training-demo-resized](https://github.com/user-attachments/assets/66dcca63-80c8-4991-8913-0c1ce0df320d)
 
-This is an animation that visualises the GAN's training progress over time. It showcases the evolution of the generated images across different epochs, and how the model gradually learns to produce more realistic images resembling Impressionist artworks.
+This is an animation that visualises the GAN's training progress over time. It showcases the evolution of generated images using fixed noise across different epochs, and how the model gradually learns to produce more realistic images resembling Impressionist artworks.
 
 ## Example Outputs
 ![dcgan_generated_images](https://github.com/user-attachments/assets/ddbad598-f04f-440b-b299-ec69772b0a76)
@@ -55,21 +55,7 @@ This model was trained and tested on the `Impressionist-landscapes-paintings` Ka
 - `src/train.py`: Implements functions for training a DCGAN, including functionalities to track loss values, save model checkpoints, and generate images from fixed noise. It also provides a method for generating test images using the trained generator.
 - `src/vis_utils.py`: Provides utility functions for organising directories, saving training histories, generating plots, and visualising images from the dataset and from the DCGAN's generated outputs.
 - `main.py`: Serves as the entry point for the project, managing command-line arguments and orchestrating the initialisation, training, and testing of a DCGAN model on Impressionist artworks.
-- `app.py`: A Flask application that serves a trained DCGAN model to generate new images based on images of Impressionist artwork.
-
-### Running `main.py` and `app.py`
-To train the model on the full dataset for 150 epochs, run:
-```
-python main.py --mode train --num_epochs 150 --model_name my_model
-```
-To generate new images using your trained model at epoch 130, run:
-```
-python main.py --mode test --checkpoint_path checkpoint/my_model/checkpoint_epoch_130.pth.tar --model_name my_model
-```
-To deploy your trained model to a web application, run:
-```
-python app.py
-```
+- `app.py`: A Flask application that serves a trained DCGAN model to generate new Impressionist artwork images.
 
 ### Steps to Reproduce
 1. Clone this repository:
@@ -80,12 +66,15 @@ git clone https://github.com/gordon801/impress-gan.git
 ```
 pip install -r requirements.txt
 ```
-3. Train and evaluate your model by following the process in the `impress-gan.ipynb` notebook or by running:
+3. Train your DCGAN model (e.g. for 150 epochs):
 ```
 python main.py --mode train --num_epochs 150 --model_name my_model
+```
+4. Generate new images using your trained model (e.g. at epoch 130):
+```
 python main.py --mode test --checkpoint_path checkpoint/my_model/checkpoint_epoch_130.pth.tar --model_name my_model
 ```
-4. Deploy your trained model to a web application and make predictions by uploading new images:
+5. Deploy your trained model to a web application and generate new Impressionist artwork images:
 ```
 python app.py
 ```
@@ -98,4 +87,3 @@ python app.py
 - [Impressionist Landscape Paintings Dataset](https://www.kaggle.com/datasets/robgonsalves/impressionistlandscapespaintings)
 - [DCGAN Pytorch Tutorial](https://pytorch.org/tutorials/beginner/dcgan_faces_tutorial.html)
 - [CS231N](https://cs231n.stanford.edu/)
-- [Pytorch Flask Tutorial](https://pytorch.org/tutorials/intermediate/flask_rest_api_tutorial.html)
